@@ -14,29 +14,30 @@
                 <div class="col-md-12 ">
                     <div class="card">
                          <div class="card-header">
-                        List POST 
+                        List POST <a href="{{url('client')}}" class="btn btn-success"> ajouter nouvelle demande</a>
                         </div>
                         <div class="card-body">
                             <table class="table table-striped">
                                 <thead>
                                     <tr>
                                         <th>ID</th>
-                                        <th>etat_demande</th>
-                                        <th>commentaire</th>
-                                        <th>Action</th>
+                                        <th>type</th>
+                                        <th>regime</th>
+                                        <th>libellé_tarifaire</th>
+
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    @foreach ($data as $key=>$row)
+                                    @foreach ($data as $key=> $row)
                                         <tr>
                                             <td>{{++$key}}</td>
-                                            <td>{{$row->etat_demande}}</td>
-                                            <td>{{$row->commentaire}}</td>
-                                        
+                                            <td>{{$row->type}}</td>
+                                            <td>{{$row->regime}}</td>
+                                            <td>{{$row->libellé_tarifaire}}</td>
                                             <td>
-                                                <a href="{{url('UneDemande',$row->demande_id)}}" class="btn btn-info"> Detail</a>
-                                                <a href="{{url('reponseDemande',$row->id)}}" class="btn btn-success"> Reponse</a>
-
+        
+                                                <a href="{{url('download',$row->fichier)}}" class="btn btn-success"> Download</a>
+                                                
                                             </td>
 
                                         </tr> 
@@ -57,3 +58,5 @@
 
 </body>
 </html>
+
+ 

@@ -14,33 +14,29 @@
                 <div class="col-md-12 ">
                     <div class="card">
                          <div class="card-header">
-                        List POST 
+                        Demande
                         </div>
                         <div class="card-body">
                             <table class="table table-striped">
                                 <thead>
                                     <tr>
                                         <th>ID</th>
-                                        <th>etat_demande</th>
-                                        <th>commentaire</th>
-                                        <th>Action</th>
+                                        <th>type</th>
+                                        <th>regime</th>
+                                        <th>libellé_tarifaire</th>
+
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    @foreach ($data as $key=>$row)
+                                   
                                         <tr>
-                                            <td>{{++$key}}</td>
-                                            <td>{{$row->etat_demande}}</td>
-                                            <td>{{$row->commentaire}}</td>
-                                        
-                                            <td>
-                                                <a href="{{url('UneDemande',$row->demande_id)}}" class="btn btn-info"> Detail</a>
-                                                <a href="{{url('reponseDemande',$row->id)}}" class="btn btn-success"> Reponse</a>
-
-                                            </td>
+                                            <td>{{$demande->id}}</td>
+                                            <td>{{$demande->type}}</td>
+                                            <td>{{$demande->regime}}</td>
+                                            <td>{{$demande->libellé_tarifaire}}</td>
 
                                         </tr> 
-                                    @endforeach
+                                   
                                 </tbody>
                             </table>
                         </div>
@@ -57,3 +53,5 @@
 
 </body>
 </html>
+
+ 

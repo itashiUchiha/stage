@@ -14,9 +14,10 @@
 			<img src="../resources/images/bg.svg">
 		</div>
 		<div class="login-content">
-				{{$errors}}
+				
 				@csrf
-			<form method="post" >
+			<form method="post"  >
+				@csrf
 				<img src="../resources/images/avatar.svg">
 				<h2 class="title">Welcome</h2>
 				
@@ -26,7 +27,10 @@
            		   </div>
            		   <div class="div">
            		   		<h5>Username</h5>
-           		   		<input type="text" name="username" class="input">
+           		   		<input type="text" name="username" class="input" required >
+						<span class="text-danger">@error('username')
+							{{$message}}
+						@enderror</span>	  
            		   </div>
            		</div>
            		<div class="input-div pass">
@@ -35,7 +39,10 @@
            		   </div>
            		   <div class="div">
            		    	<h5>Password</h5>
-           		    	<input type="password" name="password" class="input">
+           		    	<input type="password" name="password" class="input" required>
+						   <span class="text-danger">@error('password')
+							{{$message}}
+						@enderror</span>	
             	   </div>
             	</div>
             	<a href="#">Forgot Password?</a>
